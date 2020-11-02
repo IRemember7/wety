@@ -1,0 +1,102 @@
+<!--index.wxml-->
+
+<view class="container">
+	<!--功能导航-->
+	<!-- <swiper class="main-swpier" indicator-dots="true" indicator-active-color="#73b4ef"> -->
+	<!-- <swiper-item class="main-core" wx:for="{{cores}}"  wx:for-item="core" wx:key="id" > -->
+	<view class="main-core">
+		<block wx:for="{{core}}" wx:key="id">
+			<navigator wx:if="{{remind !== '未绑定' && !item.disabled  }}" class="main-core-item" url="{{'/pages/core/'+item.id+'/'+item.id}}">
+				<image class="core-item-icon" src="/images/core/{{item.id}}.png"></image>
+				<text class="core-item-name">{{item.name}}</text>
+			</navigator>
+			<view wx:else class="main-core-item disabled" bindtap="disabled_item">
+				<image class="core-item-icon" src="/images/core/{{item.id}}@disabled.png"></image>
+				<text class="core-item-name">{{item.name}}</text>
+			</view>
+		</block>
+		<!-- </swiper-item > -->
+		<!-- </swiper> -->
+		<view class="fix_tip {{disabledItemTap?'active':''}}">
+			<text wx:if="{{remind == ''}}">请先绑定帐号</text>
+			<text wx:else>该服务不可用</text>
+		</view>
+	</view>
+	<!-- <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="4000">
+  <block wx:for="{{msgList}}" wx:key="item">
+      <swiper-item>
+        <view class="swiper_item">{{item}}</view>
+      </swiper-item>
+  </block>
+</swiper> -->
+	<view wx:if="{{remind}}" class="remind-box">
+		<image wx:if="{{remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
+		<block wx:else>
+			<image class="remind-img" src="/images/index/nothing.png"></image>
+			<text class="remind-text">{{remind}}</text>
+			<navigator wx:if="{{remind == '未绑定'}}" url="/pages/more/login" class="remind-btn">前往绑定</navigator>
+		</block>
+	</view>
+	<!--卡片列表-->
+	<!--今日课表-->
+	<view class="main-card-item" id="kb" wx:if="{{card.kb.show}}">
+		<navigator url="/pages/core/kb/kb">
+			<view class="card-item-hd">
+				<image class="card-item-icon" src="/images/core/kb.png"></image>
+				<text class="card-item-name">今日课表</text>
+			</view>
+			<view wx:if="{{card.kb.nothing}}" class="card-item-bd kb-nothing">
+				<text>今天居然没有课~😆</text>
+			</view>
+			<view wx:else class="card-item-bd">
+				<!-- <view class="kb-item" wx:for="{{card.kb.data}}" wx:key="item" wx:if="{{item.zc == week &&item.xq==xqj}}"> -->
+				<view class="kb-item" wx:for="{{todayclass}}" wx:key="dgksdm">
+					<view class="kb-item-left">
+						<text class="kb-item-what">{{item.kcmc}}</text>
+						<text class="kb-item-when">{{item.jcdm2}}</text>
+					</view>
+					<text class="kb-item-where">{{item.jxcdmc}}</text>
+				</view>
+			</view>
+			<view class="kb-open">
+				<text>查看完整课表</text>
+			</view>
+		</navigator>
+	</view>
+	<!-- ---------------每日一句----------------- -->
+	<view class="main-card-item" id="mryj" wx:if="{{card.mryj.show}}">
+		<view class="card-item-hd">
+			<image class="card-item-icon" src="/images/index/mryj.png"></image>
+			<text class="card-item-name">每日一句</text>
+		</view>
+		<view class="card-item-bd">
+			<view class="mryj-balance">
+				<text class="mryj-balance-value">{{card.mryj.data.content}}</text>
+			</view>
+			<view class="mryj-balance">
+				<text class="mryj-balance-value">{{card.mryj.data.note}}</text>
+			</view>
+		</view>
+	</view>
+	<!------------ 学分 ----------------------->
+	<view class="main-card-item" id="xf" wx:if="{{card.xf.show}}">
+		<view class="card-item-hd">
+			<image class="card-item-icon" src="/images/index/xf.png"></image>
+			<text class="card-item-name">个人学分</text>
+		</view>
+		<view class="card-item-bd">
+			<view class="mryj-balance">
+				<text class="mryj-balance-value">平均绩点：{{card.xf.data.tjz2}}</text>
+			</view>
+			<view class="mryj-balance">
+				<text class="mryj-balance-value">{{card.xf.data.tjmc1}}：{{card.xf.data.tjz1}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="main-ending">
+		<view class="main-ending-line"></view>
+		<view class="main-ending-text">我是一个乖巧的结尾</view>
+		<view class="main-ending-line"></view>
+	</view>
+
+</view>

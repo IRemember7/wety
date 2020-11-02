@@ -1,0 +1,20 @@
+  <!-- 天气卡片 -->
+  <weather-card></weather-card>
+    <!--新闻列表-->
+    <view class="content" style="margin-top:-170rpx">
+    <view class="loader">
+      <image src="/images/index/loading.gif" wx-if="{{loading}}"></image>
+    </view>
+    <!-- 1要闻hy 2快讯oa 3通知jw -->
+    <block >
+      <view wx:for="{{newsList}}" wx:key="item">
+        <view class="list-item {{item.type==1?'hy':item.type==2?'oa':'jw'}}" bindtap="getDetail" data-index="{{item}}" hover-class="viewHover">
+          <view class="list-item-left">
+            <text class="list-item-title">{{item.title}}</text>
+            <text class="list-item-time">{{item.date}}</text>
+          </view>
+          <image class="list-item-icon" src="/images/news/{{item.type==1?'hy':item.type==2?'oa':'jw'}}.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>

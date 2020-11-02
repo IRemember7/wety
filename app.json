@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/news/news",
+    "pages/news/detail/detail",
+    "pages/more/more",
+    "pages/more/login",
+    "pages/core/xl/xl",
+    "pages/core/kb/kb",
+    "pages/core/cj/cj",
+    "pages/core/ks/ks",
+    "pages/core/bx/bx",
+    "pages/core/pj/pj",
+    "pages/more/about"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#7acfa6",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "We天院",
+    "backgroundColor": "#7acfa6",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#7f848a",
+    "selectedColor": "#7acfa6",
+    "backgroundColor": "#f7f6fb",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/index/index.png",
+        "selectedIconPath": "/images/index/index@active.png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "校园公告",
+        "iconPath": "/images/index/news.png",
+        "selectedIconPath": "/images/index/news@active.png"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "text": "更多",
+        "iconPath": "/images/index/more.png",
+        "selectedIconPath": "/images/index/more@active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 30000
+  },
+  "sitemapLocation": "sitemap67.json"
+}

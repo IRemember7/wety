@@ -1,0 +1,16 @@
+<!--pages/news/detail/detail.wxml-->
+<view class="container">
+  <block >
+    <view class="title">
+      <text>{{title}}</text>
+    </view>
+    <view class="info">
+      <text >发布时间：{{date}}</text>
+      <text >作者：广州理工学院</text>
+    </view>
+    <!-- <text class="detail">{{detail}}</text> -->
+    <scroll-view scroll-x="true">
+    <rich-text nodes="{{content}}" class="detail"></rich-text>
+  </scroll-view>
+  </block>
+</view>

@@ -1,0 +1,15 @@
+/* pages/core/pj/pj.wxss */
+page{
+  background-color:  #f0eff5;
+}
+.pj{
+  height: 100%;
+  width: 100%;
+  
+}
+.pj-text{
+  text-align: center;
+}
+.pj-img{
+  margin: 0 auto;
+}

@@ -1,0 +1,14 @@
+<!--pages/core/bx/bx.wxml-->
+<!-- 图片需要固定定位,不能滚动,占满全屏,各屏幕显示完整 -->
+<view class="v1">
+    <view>
+        <image src="{{imgPath}}" mode="aspectFit" class="ima1" bindtap="imgYu">
+        </image>
+        <view class="t1">扫码报修！</view>
+ 
+    
+    </view>
+  
+
+
+</view>

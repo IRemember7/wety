@@ -1,0 +1,38 @@
+<!--components/weather-card/weather-card.wxml-->
+<!--天气-->
+<view class="margin shadow-md padding radius-lg animation-slide-bottom {{weatherClass == ''?'bg-white':weatherClass + '-bg'}}" bindtap="showMoreForecast">
+  <view class="main-card-item">
+    <view class='text-lg text-right'>
+      <text class="icon-location">{{city}}{{weather == null?'天气加载中...':'市 | '+weather[0].weather}} </text>
+    </view>
+    <view class="margin" style='display: block' wx:if="{{weather == null}}">
+      <view class='loading'>
+        <van-loading />
+      </view>
+    </view>
+    <view class="margin-top" style='display: block' wx:else>
+      <view class='margin-bottom'>
+        <view class="margin-top text-right">
+          <text class="text-xsl"> {{weather[0].real}}</text>
+          <text class="text-xl">°C  \n</text>
+          <text class='text-lg'> {{weather[0].lowest}} | {{weather[0].highest}}</text>
+        </view>
+        <view class="weather-pic {{weatherClass}}"></view>
+      </view>
+      <view class='margin-top'>
+        <text class='icon-info'> {{weather[0].tips}} 点击{{showMoreForecast?'隐藏':'查看'}}近七日天气预报。</text>
+      </view>
+      <!--七日预报-->
+      <view wx:if="{{showMoreForecast}}">
+        <view class='padding-top' wx:for="{{weather}}" wx:for-item="day" wx:key="day">
+          <view class='text-lg'>
+            <text class='icon-titles'>{{day.date}} | {{day.weather}} \n </text>
+          </view>
+          <view class='text-lg padding-left'>
+            <text class='text-center'> {{day.highest}} | {{day.lowest}} | {{day.wind}} \n</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

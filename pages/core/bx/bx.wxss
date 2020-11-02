@@ -1,0 +1,17 @@
+/* pages/core/bx/bx.wxss */
+page{
+  background:url("https://pic.downk.cc/item/5f6ad562160a154a67a9ebf0.jpg") no-repeat;
+  background-size: cover;
+}
+
+.ima1{
+  width: 60%;
+  margin-left:20%; 
+  margin-top: 55%;
+}
+.t1{
+  text-align: center;
+  font-family: KaiTi;
+  font-size: 25px;
+  
+}

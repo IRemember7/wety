@@ -1,0 +1,70 @@
+<!--kb.wxml-->
+<view bindtouchstart='touchStart' bindtouchend="touchEnd">
+<view>
+    <view wx:if="{{remind}}" class="remind-box">
+        <image wx:if="{{remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
+        <block wx:else>
+          <image class="remind-img" src="/images/index/nothing.png"></image>
+          <text class="remind-text">{{remind}}</text>
+        </block>
+    </view>
+    <block wx:else >
+<view class="top">
+  <view wx:for="{{['一','二','三','四','五','六','日']}}" class="top-text" wx:key="item">周{{item}}</view>
+</view>
+<view class="scroll">
+  <view style="height:1200rpx;width:730rpx;display:flex;">
+    <view style="background-color:#fff;color:#161823;">
+      <view wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" class="left" wx:key="item">
+        {{item}}
+      </view>
+    </view>
+    <!--课表-->
+    <view wx:for="{{wlist}}" wx:key="item" wx:if="{{item.zc == week}}">
+      <view class="flex-item kcb-item" data-statu="open" style="margin-left:{{(item.xq-1)*100 + 10}}rpx;margin-top:{{(item.jcdm[1]-1)*100+5}}rpx;height:{{2*100-5}}rpx;background-color:{{colorArrays[item.dgksdm%6]}};opacity:0.8;" catchtap="click" data-index="{{item}}">
+        <view class="smalltext" >{{item.kcmc}}</view>
+      </view>
+        <!--弹出面板区域  -->
+        <view class="kb-info-ctn kb-info-ctn-open" wx:if="{{ shows}}">
+          <view  class="tit">
+            <view >课程名称：{{classitem.kcmc}}</view>
+            <view >教学班级：{{classitem.jxbmc}}</view>
+            <view >任课教师：{{classitem.teaxms}}</view>
+            <view >上课时间：{{classitem.jcdm2}}</view>
+            <view >上课地点:{{classitem.jxcdmc}}</view>
+            <view >上课内容:{{classitem.sknrjj}}</view>
+        </view>
+        </view>
+      <!--遮罩层  -->
+      <view class="shade"  wx:if="{{shows}}" bindtap='close'></view>
+    </view>
+  </view>
+</view>
+    </block>
+</view>
+<view class="kb-info-ctn">
+  <view class="kb-info-title">
+   <text class="kb-info-week">星期{{nowxq}}</text>
+  <view class="kb-swipers">
+    <view class="kb-swiper-mask-left" data-target="week" data-direction="left" bindtap="lastclass">
+    <image src="/images/core/common/left_g.png"></image>
+    </view> 
+   <view  class="kb-week-swiper" > 
+      <view class="kb-week-swiper-item">
+         <text class="active">第{{week}}周</text>
+      </view>
+    </view>
+     <view class="kb-swiper-mask-right" data-target="week" data-direction="right" bindtap="nextclass">
+           <image src="/images/core/common/right_g.png"></image>
+      </view>         
+        </view> 
+        <!-- </block>  -->                
+      <view class="kb-choose-view-box">
+    <view class="kb-choose-view">
+      <text class="active" bindtap="nowclass">本周</text>
+     </view>
+     </view>
+       </view>
+</view>
+</view>
+

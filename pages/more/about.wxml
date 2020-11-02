@@ -1,0 +1,72 @@
+<!--about.wxml-->
+<view class="container">
+	<view class="header">
+		<view class="black-cover"></view>
+		<image class="logo" src="/images/more/logo.png"></image>
+		<image class="title" src="/images/more/title.png"></image>
+	</view>
+	<view class="content">
+		<view class="version">
+			<view class="version-title">
+				<text class="title-name">We天院</text>
+				<text class="version-text">v3.0.3</text>
+				<text class="version-text">起飞版</text>
+			</view>
+			<view bindtap="toggleLog">
+				<text class="version-log-link" wx:if="{{!showLog}}">更新日志</text>
+				<text class="version-log-link" wx:else>简介</text>
+			</view>
+		</view>
+		<view class="describe" wx:if="{{!showLog}}">
+			<text class="desc-title">简介</text>
+			<view class="desc-list">
+				<text class="desc-list-item">广州理工学院官网：http://www.thxy.cn</text>
+			</view>
+			<text class="desc-content">We天院是一个微信小程序，是有别于订阅号/服务号的一种全新的连接用户与服务的方式，可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</text>
+			<text class="desc-content">We天院是碎片式信息一体化校园移动门户，集课表、成绩、考试、等各功能于一身。</text>
+			<text class="desc-content">想一起飞的小伙伴</text>
+			<text class="desc-content">可以联系我qq邮箱：997918254@qq.com</text>
+			<text class="desc-content">或者添加我的微信liangmaomao777</text>
+		</view>
+		<view class="log-list" wx:else>
+			<view class="describe">
+				<view class="desc-title">
+					<text class="desc-v">v3.1.0 起飞版</text>
+					<text class="desc-time">2020.10.21</text>
+				</view>
+				<text class="desc-content">芜湖~起飞</text>
+				<view class="desc-list">
+					<text class="desc-list-item">新增校园公告（测试版，暂无图片）</text>
+					<text class="desc-list-item">新增天气预报（测试版）</text>
+					<text class="desc-list-item">修复一些已知bug</text>
+				</view>
+			</view>
+			<view class="describe">
+				<view class="desc-title">
+					<text class="desc-v">v3.0.3 起飞版</text>
+					<text class="desc-time">2020.09.23</text>
+				</view>
+				<text class="desc-content">芜湖~起飞</text>
+				<view class="desc-list">
+					<text class="desc-list-item">新增下拉刷新，更新数据不用再重新登录，下拉刷新即可</text>
+					<text class="desc-list-item">新增分享，可通过右上角发送给好友</text>
+				</view>
+			</view>
+			<view class="describe">
+				<view class="desc-title">
+					<text class="desc-v">v3.0.0 起飞版</text>
+					<text class="desc-time">2020.09.04</text>
+				</view>
+				<text class="desc-content">芜湖~起飞</text>
+				<view class="desc-list">
+					<text class="desc-list-item">飞飞飞飞</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="footer">
+		<view class="footer-lanshan">
+			<text>we天院</text>
+		</view>
+	</view>
+</view>

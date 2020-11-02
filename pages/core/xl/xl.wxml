@@ -1,0 +1,11 @@
+<!--pages/core/xl/xl.wxml-->
+<view>
+  <calendar term="2020-2021-1" termStart="{{opentime}}" weekCount="18"></calendar>
+</view>
+<!-- 
+    term: 当前学期 
+    termStart: 开学日期
+    weekCount: 学期总周次
+    vacationStart: 假期开始周次
+-->
+<!-- 注意: 所有填写日期需符合 yyyy-MM-dd 格式，例如 2020-03-01 而不是 2020-3-1 -->

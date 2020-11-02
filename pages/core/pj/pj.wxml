@@ -1,0 +1,6 @@
+<!--pages/core/pj/pj.wxml-->
+<view class="remind-box" style="margin-top:45%">
+  <image class="remind-img" src="/images/index/nothing.png"></image>
+	<view class="remind-text pj-text">本功能将于本学期评教前出，敬请期待</view>
+</view>
+			

@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#b9d58e",
+  "navigationBarTitleText": "校园日历",
+  "backgroundColor": "#73b4ef",
+   "enablePullDownRefresh": false,
+  "usingComponents": {
+    "calendar": "/components/calendar/calendar"
+  }
+}

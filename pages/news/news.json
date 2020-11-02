@@ -1,0 +1,8 @@
+{
+  "backgroundColor": "#ffffff", 
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "校园公告(测试版)",
+  "usingComponents": { 
+    "weather-card": "/components/weather-card/weather-card"
+  }
+}
